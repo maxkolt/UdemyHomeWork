@@ -23,11 +23,11 @@ console.log(numStr);
 //2ая домашка по строкам
 let string = "some test string";
 const foo = string[0];
-const foot = string[string.length -1];
+const foot = string[string.length - 1];
 console.log(foo);
 console.log(foot);
 // с этим кодом нужно разобраться еще раз
-const firstLastUpper = `${string[0].toUpperCase()}${string.slice(1,-1)}${string[string.length - 1].toUpperCase()}`;
+const firstLastUpper = `${string[0].toUpperCase()}${string.slice(1, -1)}${string[string.length - 1].toUpperCase()}`;
 console.log(firstLastUpper);
 //
 const str = string.indexOf('string');
@@ -49,3 +49,15 @@ console.log(fix);
 const i = 20, b = 21;
 const numSt = String(i) + String(b);
 console.log(numSt);
+//3ая домашка по обьектам
+const item = {
+    product: 'iphone'
+}
+item.price = 1000;
+item.currency = 'dollar';
+console.log(item);
+//
+item.details = {};
+item.details.model = "XR";
+item.details.color = "Red";
+//
