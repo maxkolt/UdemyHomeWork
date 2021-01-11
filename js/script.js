@@ -12,4 +12,12 @@ console.log(arrNum);
 //
 const num = 15;
 const a = Math.round(Math.random() * num);
-console.log(a)
+console.log(a);
+//
+const value = (0.6 * 10 + 0.7 * 10) / 10;
+console.log(value);
+//
+const numStr = parseFloat('100$');
+console.log(numStr);
+
+//2ая домашка по строкам
