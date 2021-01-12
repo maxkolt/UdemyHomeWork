@@ -86,12 +86,6 @@ if (car.age > 5) {
 let itemy = {name: 'Intel core i7', price: '100$', discount: '15%'};
 
 
-
-
-
-
-
-
 //
 let product = {
     name: "Яблоко",
@@ -105,3 +99,26 @@ if (productPrice >= min && productPrice <= max) {
 } else {
     console.log('товаров не найдено');
 }
+//5ая домашка по тернарным операторам switch.case
+const r = 'block';
+switch (r) {
+    case 'block':
+        console.log('block');
+        break;
+    case 'none':
+        console.log('none');
+        break;
+    case 'lane':
+        console.log('line');
+        break;
+    default:
+        console.log('other');
+}
+//
+let o = 'hidden';
+o = o === 'hidden' ? 'visible' : 'hidden';
+//
+let c = 0;
+c = c === 0 ? 1 : c < 0 ? 'less then zero' : c * 10;
+//6ая
+
