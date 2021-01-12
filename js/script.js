@@ -60,4 +60,48 @@ console.log(item);
 item.details = {};
 item.details.model = "XR";
 item.details.color = "Red";
+//4ая домашка логические операторы
+const g = 'hidden';
+if (g === 'hidden') {
+    console.log('visable');
+} else {
+    console.log('hidden');
+}
 //
+const d = 10;
+if (d === 10) {
+    console.log(1);
+} else if (d <= 0) {
+    console.log('less then zero');
+} else (c *= 10);
+//
+let car = {name: 'Lexus', age: 10, create: 2008, needRepair: false}
+if (car.age > 5) {
+    console.log('Need Repair');
+    car.needRepair = true
+} else {
+    car.needRepair = false
+}
+//
+let itemy = {name: 'Intel core i7', price: '100$', discount: '15%'};
+
+
+
+
+
+
+
+
+//
+let product = {
+    name: "Яблоко",
+    price: "10$"
+};
+const productPrice = parseFloat(product.price);
+let min = 10;
+let max = 20;
+if (productPrice >= min && productPrice <= max) {
+    console.log(product.name);
+} else {
+    console.log('товаров не найдено');
+}
