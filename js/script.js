@@ -120,5 +120,61 @@ o = o === 'hidden' ? 'visible' : 'hidden';
 //
 let c = 0;
 c = c === 0 ? 1 : c < 0 ? 'less then zero' : c * 10;
-//6ая
+//6ая домашка по циклам
+let sti = 'i am in the easycode';
+let res = '';
+for (let i = 0; i < sti.length; i++) {
+    if (i === 0 || sti[i - 1] === ' ') {
+        res += sti[i].toUpperCase();
+    } else {
+        res += sti[i];
+    }
+}
+console.log(res);
+//
+let stro = 'tseb eht ma i';
+let resa = '';
+for (let i = stro.length; i--;) {
+    resa += stro[i];
+}
+console.log(resa);
+//
+let rez = 1;
+for (let i = 1; i <= 10; i++) {
+    rez *= i;
+}
+console.log(rez)
+//
+let abc = 'JavaScript is a pretty good language';
+let bce = '';
+for (let i = 0; i < abc.length; i++) {
+    if (i === 0 || abc[i - 1] === ' ') {
+        bce += abc[i].toUpperCase();
+    } else if (abc[i] !== ' ') {
+        bce += abc[i];
+    }
+}
+console.log(bce);
+//
+let arr =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+for (let num of arr) {
+    if (num % 2) {
+        console.log(num);
+    }
+}
+//
+let list = {
+    name: 'denis',
+    work: 'easycode',
+    age: 29
+}
+for (let key in list) {
+    if (typeof list[key] === 'string') {
+        list[key] = list[key].toUpperCase();
+    }
+}
+console.log(list);
+
+
+
 
