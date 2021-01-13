@@ -174,6 +174,14 @@ for (let key in list) {
     }
 }
 console.log(list);
+//
+for(el of array) {
+    let isGrome = (el % 2) === 0;
+
+    if(isGrome){
+        console.log(el);
+    }
+}
 
 //задачи на функции
 function multiply() {
@@ -190,6 +198,26 @@ function multiply() {
 multiply(1, 5, 3, 4);
 multiply();
 //
+function reverseString(str) {
+    let s = '';
+    if(str === null || str === undefined) {
+        return '';
+    }
+
+    for(let i = str.length -1; i >= 0; i--){
+        s += str[i];
+    }
+
+    console.log(s);
+    return s;
+}
+
+const result = reverseString('test');
+const result2 = reverseString('');
+const result3 = reverseString(null);
+reverseString(undefined);
+reverseString();
+
 
 
 
