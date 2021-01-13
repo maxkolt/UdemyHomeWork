@@ -156,7 +156,7 @@ for (let i = 0; i < abc.length; i++) {
 }
 console.log(bce);
 //
-let arr =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 for (let num of arr) {
     if (num % 2) {
         console.log(num);
@@ -174,6 +174,22 @@ for (let key in list) {
     }
 }
 console.log(list);
+
+//задачи на функции
+function multiply() {
+    if (arguments.length === 0) return 0;
+    let res = 1;
+    for (let i = 0; i < arguments.length; i++) {
+        if (!isNaN(arguments[i]))
+            res *= arguments[i];
+    }
+    console.log(res);
+    return res;
+}
+
+multiply(1, 5, 3, 4);
+multiply();
+//
 
 
 
