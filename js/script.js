@@ -175,10 +175,10 @@ for (let key in list) {
 }
 console.log(list);
 //
-for(el of array) {
+for (el of array) {
     let isGrome = (el % 2) === 0;
 
-    if(isGrome){
+    if (isGrome) {
         console.log(el);
     }
 }
@@ -194,51 +194,52 @@ function multiply() {
     console.log(res);
     return res;
 }
+
 multiply(1, 5, 3, 4);
 multiply();
+
 //
 function reverseString(str) {
-    let s = '';
-    if(str === null || str === undefined) {
-        return '';
-    }
+    let string = String(str);
+    let res = '';
 
-    for(let i = str.length -1; i >= 0; i--){
-        s += str[i];
+    for (let i = string.length; i--;) {
+        res += string[i];
     }
-
-    console.log(s);
-    return s;
+    return res;
 }
-const result = reverseString('test');
-const result2 = reverseString('');
-const result3 = reverseString(null);
-reverseString(undefined);
-reverseString();
+
+console.log(reverseString('test'))
+console.log(reverseString(''))
+console.log(reverseString(null))
+console.log(reverseString(undefined))
+console.log(reverseString())
+
 //
 function getCodeStringFromText(str) {
-     let string = String(str);
-   let res = '';
-  for (let i = 0; i < string.length; i++) {
-     res += string[i].charCodeAt() + ' ';
-  }
-  return res.trim();
+    let string = String(str);
+    let res = '';
+    for (let i = 0; i < string.length; i++) {
+        res += string[i].charCodeAt() + ' ';
+    }
+    return res.trim();
 }
- getCodeStringFromText("hello");
+
+getCodeStringFromText("hello");
+
 //
 function guessTheNumber(num) {
     const number = Number(num);
 
     if (typeof number !== "number" || isNaN(number)) return new Error("Please provide a valid number");
-
     if (number < 0 || number > 10) return new Error("Please provide number in range 0 - 10");
 
     const random = Math.ceil(Math.random() * 10);
-
     if (random === number) return "You win!";
 
     return `You are lose, your number is ${number}, the random number is ${random}`;
 }
+
 guessTheNumber(5);
 
 
