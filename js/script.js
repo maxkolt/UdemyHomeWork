@@ -374,6 +374,74 @@ console.log(every([1,2], function (el) {
 //
 
 
+function foo(width, height){
+    return width * height;
+}
+const rectangle = {
+    width: 10,
+    height: 20,
+    getSquare() { return foo(this.width, this.height) }
+};
+
+console.log( rectangle.getSquare() );
+//
+const price = {
+    price: 10,
+    discount: '15%',
+    getPrice() {
+        return this.price;
+    },
+    getPriceWithDiscount() {
+        const disc = parseFloat(this.discount) * 100
+        const skidkaUSD = disc/ (100 * this.price);
+        return this.price - skidkaUSD;
+    }
+}
+
+console.log(price.getPriceWithDiscount());
+//
+const array = [1, 2, 3, 5, 8, 9, 10];
+const newArr = [  ];
+
+for(el of array){
+    const isOdd = (el % 2 == 0);
+    const obj = {
+        digit: el,
+        odd: isOdd
+    }
+    newArr.push(obj);
+}
+console.log(newArr);
+//
+function hasNull(array){
+    for(element of array){
+        if(element === 0){
+            return true;
+        }
+    }
+    return false;
+}
+
+let result =  hasNull([12, 4, 50, 1,  18, 40]);
+console.log(result);
+//
+function isLongerThan3(array){
+    for(el of array){
+        if(el.length < 3){
+            return false;
+        }
+    }
+    return true;
+}
+
+let result = isLongerThan3(['easycode', 'hello', 'what']);
+console.log(result);
+
+
+
+
+
+
 
 
 
