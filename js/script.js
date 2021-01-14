@@ -49,6 +49,7 @@ console.log(fix);
 const i = 20, b = 21;
 const numSt = String(i) + String(b);
 console.log(numSt);
+
 //3ая домашка по обьектам
 const item = {
     product: 'iphone'
@@ -60,6 +61,7 @@ console.log(item);
 item.details = {};
 item.details.model = "XR";
 item.details.color = "Red";
+
 //4ая домашка логические операторы
 const g = 'hidden';
 if (g === 'hidden') {
@@ -83,10 +85,6 @@ if (car.age > 5) {
     car.needRepair = false
 }
 //
-let itemy = {name: 'Intel core i7', price: '100$', discount: '15%'};
-
-
-//
 let product = {
     name: "Яблоко",
     price: "10$"
@@ -99,6 +97,7 @@ if (productPrice >= min && productPrice <= max) {
 } else {
     console.log('товаров не найдено');
 }
+
 //5ая домашка по тернарным операторам switch.case
 const r = 'block';
 switch (r) {
@@ -120,6 +119,7 @@ o = o === 'hidden' ? 'visible' : 'hidden';
 //
 let c = 0;
 c = c === 0 ? 1 : c < 0 ? 'less then zero' : c * 10;
+
 //6ая домашка по циклам
 let sti = 'i am in the easycode';
 let res = '';
@@ -179,11 +179,11 @@ for (el of array) {
     let isGrome = (el % 2) === 0;
 
     if (isGrome) {
-        console.log(el);
     }
 }
+console.log(el);
 
-//задачи на функции
+//Задачи на функции
 function multiply() {
     if (arguments.length === 0) return 0;
     let res = 1;
@@ -241,6 +241,138 @@ function guessTheNumber(num) {
 }
 
 guessTheNumber(5);
+
+//Методы массивов
+function getArray(num) {
+    const arr = [];
+
+    for (let i = 1; i <= num; i++) {
+        arr.push(i);
+    }
+    return arr;
+}
+
+getArray(10);
+
+//
+function doubleArray(arr) {
+    return arr.concat(arr);
+}
+
+doubleArray([1, 2, 3])
+
+//
+function changeCollection() {
+    const res = [];
+
+    for (let i = 0; i < arguments.length; i++) {
+        if (Array.isArray(arguments[i])) {
+            const el = arguments[i].slice();
+            el.shift();
+            res.push(el)
+        }
+    }
+    return res;
+}
+
+console.log(changeCollection([1, 2, 3]))
+//
+const users = [
+    {
+        "_id": "5e36b779dc76fe3db02adc32",
+        "balance": "$1,955.65",
+        "picture": "http://placehold.it/32x32",
+        "age": 33,
+        "name": "Berg Zimmerman",
+        "gender": "male"
+    },
+    {
+        "_id": "5e36b779d117774176f90e0b",
+        "balance": "$3,776.14",
+        "picture": "http://placehold.it/32x32",
+        "age": 37,
+        "name": "Deann Winters",
+        "gender": "female"
+    },
+    {
+        "_id": "5e36b779daf6e455ec54cf45",
+        "balance": "$3,424.84",
+        "picture": "http://placehold.it/32x32",
+        "age": 36,
+        "name": "Kari Waters",
+        "gender": "female"
+    }
+]
+
+function filterUsers(arr, key, value) {
+    if (!Array.isArray(arr)) return new Error('The first argument should be an array');
+    if (typeof key !== "string" || key === '') return new Error('The key should be a valid string');
+    if (value === undefined || value === null) return new Error('The value should be a valid value.');
+
+    const res = [];
+
+    for (l = 0; l < arr.length; l++) {
+        if (arr[i][key] === value) {
+            res.push(arr[l])
+        }
+    }
+    return res;
+}
+
+console.log(filterUsers(users, "age", 36))
+
+//колбэк функции
+function firstFunc(arr, fn) {
+    let res = 'New value: ';
+
+    for (let i = 0; i < arr.length; i++) {
+        res += fn(arr[i]);
+    }
+
+    return res.trim();
+}
+
+function handler1(el) {
+    return el[0].toUpperCase() + el.slice(1);
+}
+
+console.log(firstFunc(['my', 'name', 'is', 'Trinity'], handler1));
+
+function handler2(el) {
+    return Number(el) * 10 + ', ';
+}
+
+console.log(firstFunc([10, 20, 30], handler2));
+
+function handler3(el) {
+    return `${el.name} is ${el.age},`
+}
+
+console.log(firstFunc([{age: 45, name: 'Jhon'}, {age: 20, name: 'Aaron'}], handler3));
+
+function handler4(el) {
+    return el.split('').reverse().join('') + ', ';
+}
+
+console.log(firstFunc(['abs', '123'], handler4));
+//
+function every(arr, fn) {
+    if (!Array.isArray(arr)) return new Error('The first argument expected as array');
+    if (!fn || typeof fn !== 'function') return new Error('The second argument expected as function');
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!fn(arr[i], i, arr)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+console.log(every([1,2], function (el) {
+    return typeof el === 'number';
+}))
+//
+
 
 
 
