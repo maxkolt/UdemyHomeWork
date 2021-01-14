@@ -194,7 +194,6 @@ function multiply() {
     console.log(res);
     return res;
 }
-
 multiply(1, 5, 3, 4);
 multiply();
 //
@@ -211,13 +210,22 @@ function reverseString(str) {
     console.log(s);
     return s;
 }
-
 const result = reverseString('test');
 const result2 = reverseString('');
 const result3 = reverseString(null);
 reverseString(undefined);
 reverseString();
-
+//
+function getCodeStringFromText(str) {
+     let string = String(str);
+   let res = '';
+  for (let i = 0; i < string.length; i++) {
+     res += string[i].charCodeAt() + ' ';
+  }
+  return res.trim();
+}
+ getCodeStringFromText("hello");
+//
 
 
 
