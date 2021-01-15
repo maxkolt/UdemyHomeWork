@@ -437,6 +437,21 @@ function isLongerThan3(array){
 let result = isLongerThan3(['easycode', 'hello', 'what']);
 console.log(result);
 
+//Стрелочные функции
+const sumer = (...params) => {
+    if (!params.length) return 0;
+    return params.reduce((prev, next) => prev + next);
+}
+//
+const convertToObject = (num) => ({
+    value: num,
+    isOdd: Boolean(num % 2)
+});
+//
+
+
+
+
 
 
 
