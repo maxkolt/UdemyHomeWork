@@ -447,7 +447,51 @@ const convertToObject = (num) => ({
     value: num,
     isOdd: Boolean(num % 2)
 });
+
+//Переберающие методы массива
+const initialValue = [1,2,3,5,8,9,10];
+const convertedArray = initialValue.map(num => ({
+    value: num,
+    odd: Boolean(num % 2)
+}));
 //
+const initialValue = [12, 4, 50, 1, 0, 18, 40];
+const zeroExist = initialValue.some(num => num === 0);
+//
+const initialValue = ['yes', 'hello', 'no', 'easycode', 'what'];
+const strLength = initialValue.every(str => str.length >= 3);
+//
+const initialValue = [
+    {cpu: 'intel', info: {cores:2, сache: 3}},
+    {cpu: 'intel', info: {cores:4, сache: 4}},
+    {cpu: 'amd', info: {cores:1, сache: 1}},
+    {cpu: 'intel', info: {cores:3, сache: 2}},
+    {cpu: 'amd', info: {cores:4, сache: 2}}
+];
+
+initialValue.sort((prev, next) => prev.info.cores - next.info.cores);
+
+//замыкание
+function minus(num1 = 0) {
+    return function (num2 = 0) {
+        return num1 - num2;
+    }
+}
+
+console.log(minus(2)(1))
+//
+function multiplyMaker(num1 = 2) {
+    return function (num2 = 1) {
+        return num1 *= num2;
+    }
+}
+const multiple = multiplyMaker(2);
+console.log(multiple(2))
+console.log(multiple(2))
+//
+
+
+
 
 
 
