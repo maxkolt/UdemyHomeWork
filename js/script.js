@@ -488,6 +488,21 @@ function multiplyMaker(num1 = 2) {
 const multiple = multiplyMaker(2);
 console.log(multiple(2))
 console.log(multiple(2))
+
+//Работа с DOM
+console.log(document.head);
+
+console.log(document.body);
+
+console.log(document.body.children);
+
+console.log(document.body.firstElementChild);
+console.log(document.body.firstElementChild.children);
+
+const div = document.body.firstElementChild;
+
+const filteredArticles = [...div.children].filter(p => p !== div.firstElementChild && p !== div.lastElementChild);
+console.log(filteredArticles);
 //
 
 
