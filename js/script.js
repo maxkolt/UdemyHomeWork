@@ -504,6 +504,22 @@ const div = document.body.firstElementChild;
 const filteredArticles = [...div.children].filter(p => p !== div.firstElementChild && p !== div.lastElementChild);
 console.log(filteredArticles);
 //
+function foo(s){
+    const arr = s.split(' '); // [ 'Найти' ]
+    let maximum = 0;
+
+    for(word of arr){
+        const l = word.length;
+        if(maximum < l){
+            maximum = l;
+        }
+    }
+    return maximum;
+}
+
+const str = 'Найти самое-пресамое длинное слово, а точнее его';
+const result = foo(str);
+console.log(result);
 
 
 
