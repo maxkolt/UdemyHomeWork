@@ -573,7 +573,33 @@ function reverseStr(str) {
 console.log(reverseStr('hello'));
 console.log(reverseStr('Howdy'));
 console.log(reverseStr('Greetings from Earth'));
+//
+function foo(str){
+    let counter = 0;
 
+    for(let i = 0; i < str.length; i++){
+        const char = str[i];
+        if(char.toLowerCase() == 'т'){
+            counter++;
+        }
+    }
+    return counter;
+}
+
+// Данные для теста
+const testString  = "ТРИ тТт";
+const testString2 = "ПЯТЬ";
+
+// Вызов функции
+const length  = foo(testString);
+const length2 = foo(testString2);
+
+// Проверка
+console.log("Результат вычисления");
+console.log("result 1:");
+console.log ( length  );
+console.log("result 2:");
+console.log ( length2  );
 
 
 
