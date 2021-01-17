@@ -220,7 +220,7 @@ function getCodeStringFromText(str) {
     let string = String(str);
     let res = '';
     for (let i = 0; i < string.length; i++) {
-        res += string[i].charCodeAt() + ' ';
+        res += string[i].charCodeAt + ' ';
     }
     return res.trim();
 }
@@ -520,6 +520,61 @@ function foo(s){
 const str = 'Найти самое-пресамое длинное слово, а точнее его';
 const result = foo(str);
 console.log(result);
+//
+function foo(s){
+    let result = 0;
+
+    for(let i = 0; i < s.length; i++){
+        const char = s[i]; // а
+        if(char == 'а'){
+            result = result + 1;
+        };
+    }
+    return result;
+}
+
+// TODO: код выше
+const str = 'а Посчитать сколько букв а во мне?';
+const res =  foo(str);
+console.log(res)
+//
+
+/*
+ Напишите программу, которая выводит через console.log все цифры от 1 до
+30, с двумя исключениями.
+1) Для чисел, нацело делящихся на 3, она должна выводить ‘Fizz’,
+2) а для чисел, делящихся на 5 (но не на 3) – ‘Buzz’.
+
+* Когда сумеете – исправьте её так, чтобы она выводила «FizzBuzz» для всех
+чисел, которые делятся и на 3 и на 5.
+ */
+
+
+function foo(){
+    for(let i = 1; i <= 30 ; i++ ){
+        if(i % 3 === 0){
+            console.log('Fizze')
+        }else if (i % 5 === 0){
+            console.log('Buzze')
+        }else{
+            console.log('Fizze' + 'Buzze')
+        }
+    }
+}
+foo();
+//
+function reverseStr(str) {
+    var newStr = '';
+    for (i = str.length - 1; i >= 0; i--) {
+        newStr += str.charAt(i);
+    }
+    return newStr;
+}
+console.log(reverseStr('hello'));
+console.log(reverseStr('Howdy'));
+console.log(reverseStr('Greetings from Earth'));
+
+
 
 
 
