@@ -689,6 +689,33 @@ const test = foo(str)
 console.log('РЕЗУЛЬТАТ: ');
 console.log(test);
 
+//Найти самое длинного слово в строке
+
+// 1) Создаю функцию
+function foo(str){
+    const string = str.split(' ');
+    let lengthWord = '';
+
+    for(word of string){
+        if(word.length > lengthWord.length){
+            lengthWord = word
+        }
+    }
+    return lengthWord;
+}
+
+
+///// ТЕСТ
+// 2) обьявляю тестовые данные:
+const str = 'Найти самое длинное слово в этой  строке';
+
+// 3) вызываю функцию с тестовыми данными и записать результат в переменную:
+const test = foo(str);
+
+// 4) печатаю результат:
+console.log('РЕЗУЛЬТАТ: ');
+console.log(test);
+
 
 
 
