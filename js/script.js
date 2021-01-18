@@ -716,6 +716,25 @@ const test = foo(str);
 console.log('РЕЗУЛЬТАТ: ');
 console.log(test);
 
+//
+function foo(str){
+    let counter = 0;
+
+    for(let i = 0; i < str.length; i++){
+        const char = str[i];
+        if(char.toLowerCase() === 'а'){
+            counter = counter + 1;
+        }
+    }
+    return counter;
+}
+
+const testString = 'САмАя длиннАя СТРОКА';
+const resultTest = foo(testString);
+
+console.log(`Буква а встречается ${resultTest} раза`);
+
+
 
 
 
