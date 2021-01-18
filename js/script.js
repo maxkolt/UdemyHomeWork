@@ -600,6 +600,73 @@ console.log("result 1:");
 console.log ( length  );
 console.log("result 2:");
 console.log ( length2  );
+//
+// 1) Создаю функцию
+function fizzBuzz(num){
+    const is3 = (num % 3 === 0);
+    const is5 = (num % 5 === 0);
+
+    if(is3 && is5){
+        console.log('FizzBuzz');
+    }
+    else if(is3){
+        console.log('Fizz');
+    }
+    else if(is5){
+        console.log('Buzz');
+    }
+}
+
+function fizzBuzzArray(array){
+    for(el of array){
+        fizzBuzz(el);
+    }
+}
+
+
+//////////////
+///// ТЕСТ //
+////////////
+
+// 2) обьявляю тестовые данные:
+const ar = [15, 3, 5, 9];
+
+// 3) вызываю функцию с тестовыми данными и записать результат в переменную:
+// const result = fizzBuzz(ar);
+fizzBuzzArray(ar);
+
+// 4) печатаю результат:
+//console.warn("РЕЗУЛЬТАТ: ");
+//console.log(result);
+//
+// 1) Создаю функцию
+function foo(str){
+    let result = '';
+    for(let i = str.length -1; i >= 0; i--){
+        let char = str[i];
+        result += char;
+    }
+    return result;
+}
+
+
+//////////////
+///// ТЕСТ //
+////////////
+
+// 2) обьявляю тестовые данные:
+const stringForTest = 'F';
+
+// 3) вызываю функцию с тестовыми данными и записать результат в переменную:
+const result = foo( stringForTest );
+
+// 4) печатаю результат:
+console.warn("РЕЗУЛЬТАТ: ");
+console.log(result);
+
+
+</script>
+
 
 
 
