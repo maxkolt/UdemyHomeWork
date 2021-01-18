@@ -663,9 +663,34 @@ const result = foo( stringForTest );
 // 4) печатаю результат:
 console.warn("РЕЗУЛЬТАТ: ");
 console.log(result);
+//
+function foo(str){
+    let arr = str.split(' ');
+    let maxLength = 0;
+
+    for(l of arr){
+        let i = l.length;
+        if(maxLength < i){
+            maxLength = i;
+        }
+    }
+    return maxLength;
+}
 
 
-</script>
+///// ТЕСТ
+// 2) обьявляю тестовые данные:
+const str = 'Посчитать сколько букв а во мне';
+
+// 3) вызываю функцию с тестовыми данными и записать результат в переменную:
+const test = foo(str)
+
+// 4) печатаю результат:
+console.log('РЕЗУЛЬТАТ: ');
+console.log(test);
+
+
+
 
 
 
