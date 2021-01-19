@@ -777,6 +777,23 @@ console.log(resultTest);
 
 const result2 = sum(resultTest);
 console.log(result2);
+//
+function reverseArray(array){
+    let result = [];
+    for(let i = array.length -1; i > 0; i--){
+        console.log("Текущее значение i: " + i);
+        console.log("Массив до изменения: " + result);
+
+        result.push(i); // как добавить в массив? Гугли
+
+        console.log("Массив ПОСЛЕ изменения: " + result);
+    }
+    return result;
+}
+
+const test = [1, 2, 3, 4];
+const resultTest = reverseArray(test);
+console.log(resultTest);
 
 
 
