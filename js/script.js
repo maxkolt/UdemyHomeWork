@@ -355,6 +355,7 @@ function handler4(el) {
 }
 
 console.log(firstFunc(['abs', '123'], handler4));
+
 //
 function every(arr, fn) {
     if (!Array.isArray(arr)) return new Error('The first argument expected as array');
@@ -368,22 +369,27 @@ function every(arr, fn) {
 
     return true;
 }
-console.log(every([1,2], function (el) {
+
+console.log(every([1, 2], function (el) {
     return typeof el === 'number';
 }))
+
 //
 
 
-function foo(width, height){
+function foo(width, height) {
     return width * height;
 }
+
 const rectangle = {
     width: 10,
     height: 20,
-    getSquare() { return foo(this.width, this.height) }
+    getSquare() {
+        return foo(this.width, this.height)
+    }
 };
 
-console.log( rectangle.getSquare() );
+console.log(rectangle.getSquare());
 //
 const price = {
     price: 10,
@@ -393,7 +399,7 @@ const price = {
     },
     getPriceWithDiscount() {
         const disc = parseFloat(this.discount) * 100
-        const skidkaUSD = disc/ (100 * this.price);
+        const skidkaUSD = disc / (100 * this.price);
         return this.price - skidkaUSD;
     }
 }
@@ -401,9 +407,9 @@ const price = {
 console.log(price.getPriceWithDiscount());
 //
 const array = [1, 2, 3, 5, 8, 9, 10];
-const newArr = [  ];
+const newArr = [];
 
-for(el of array){
+for (el of array) {
     const isOdd = (el % 2 == 0);
     const obj = {
         digit: el,
@@ -412,22 +418,24 @@ for(el of array){
     newArr.push(obj);
 }
 console.log(newArr);
+
 //
-function hasNull(array){
-    for(element of array){
-        if(element === 0){
+function hasNull(array) {
+    for (element of array) {
+        if (element === 0) {
             return true;
         }
     }
     return false;
 }
 
-let result =  hasNull([12, 4, 50, 1,  18, 40]);
+let result = hasNull([12, 4, 50, 1, 18, 40]);
 console.log(result);
+
 //
-function isLongerThan3(array){
-    for(el of array){
-        if(el.length < 3){
+function isLongerThan3(array) {
+    for (el of array) {
+        if (el.length < 3) {
             return false;
         }
     }
@@ -449,7 +457,7 @@ const convertToObject = (num) => ({
 });
 
 //Переберающие методы массива
-const initialValue = [1,2,3,5,8,9,10];
+const initialValue = [1, 2, 3, 5, 8, 9, 10];
 const convertedArray = initialValue.map(num => ({
     value: num,
     odd: Boolean(num % 2)
@@ -462,11 +470,11 @@ const initialValue = ['yes', 'hello', 'no', 'easycode', 'what'];
 const strLength = initialValue.every(str => str.length >= 3);
 //
 const initialValue = [
-    {cpu: 'intel', info: {cores:2, сache: 3}},
-    {cpu: 'intel', info: {cores:4, сache: 4}},
-    {cpu: 'amd', info: {cores:1, сache: 1}},
-    {cpu: 'intel', info: {cores:3, сache: 2}},
-    {cpu: 'amd', info: {cores:4, сache: 2}}
+    {cpu: 'intel', info: {cores: 2, сache: 3}},
+    {cpu: 'intel', info: {cores: 4, сache: 4}},
+    {cpu: 'amd', info: {cores: 1, сache: 1}},
+    {cpu: 'intel', info: {cores: 3, сache: 2}},
+    {cpu: 'amd', info: {cores: 4, сache: 2}}
 ];
 
 initialValue.sort((prev, next) => prev.info.cores - next.info.cores);
@@ -479,12 +487,14 @@ function minus(num1 = 0) {
 }
 
 console.log(minus(2)(1))
+
 //
 function multiplyMaker(num1 = 2) {
     return function (num2 = 1) {
         return num1 *= num2;
     }
 }
+
 const multiple = multiplyMaker(2);
 console.log(multiple(2))
 console.log(multiple(2))
@@ -503,14 +513,15 @@ const div = document.body.firstElementChild;
 
 const filteredArticles = [...div.children].filter(p => p !== div.firstElementChild && p !== div.lastElementChild);
 console.log(filteredArticles);
+
 //
-function foo(s){
+function foo(s) {
     const arr = s.split(' '); // [ 'Найти' ]
     let maximum = 0;
 
-    for(word of arr){
+    for (word of arr) {
         const l = word.length;
-        if(maximum < l){
+        if (maximum < l) {
             maximum = l;
         }
     }
@@ -520,22 +531,24 @@ function foo(s){
 const str = 'Найти самое-пресамое длинное слово, а точнее его';
 const result = foo(str);
 console.log(result);
+
 //
-function foo(s){
+function foo(s) {
     let result = 0;
 
-    for(let i = 0; i < s.length; i++){
+    for (let i = 0; i < s.length; i++) {
         const char = s[i]; // а
-        if(char == 'а'){
+        if (char == 'а') {
             result = result + 1;
-        };
+        }
+        ;
     }
     return result;
 }
 
 // TODO: код выше
 const str = 'а Посчитать сколько букв а во мне?';
-const res =  foo(str);
+const res = foo(str);
 console.log(res)
 //
 
@@ -550,18 +563,20 @@ console.log(res)
  */
 
 
-function foo(){
-    for(let i = 1; i <= 30 ; i++ ){
-        if(i % 3 === 0){
+function foo() {
+    for (let i = 1; i <= 30; i++) {
+        if (i % 3 === 0) {
             console.log('Fizze')
-        }else if (i % 5 === 0){
+        } else if (i % 5 === 0) {
             console.log('Buzze')
-        }else{
+        } else {
             console.log('Fizze' + 'Buzze')
         }
     }
 }
+
 foo();
+
 //
 function reverseStr(str) {
     var newStr = '';
@@ -570,16 +585,18 @@ function reverseStr(str) {
     }
     return newStr;
 }
+
 console.log(reverseStr('hello'));
 console.log(reverseStr('Howdy'));
 console.log(reverseStr('Greetings from Earth'));
+
 //
-function foo(str){
+function foo(str) {
     let counter = 0;
 
-    for(let i = 0; i < str.length; i++){
+    for (let i = 0; i < str.length; i++) {
         const char = str[i];
-        if(char.toLowerCase() == 'т'){
+        if (char.toLowerCase() == 'т') {
             counter++;
         }
     }
@@ -587,38 +604,36 @@ function foo(str){
 }
 
 // Данные для теста
-const testString  = "ТРИ тТт";
+const testString = "ТРИ тТт";
 const testString2 = "ПЯТЬ";
 
 // Вызов функции
-const length  = foo(testString);
+const length = foo(testString);
 const length2 = foo(testString2);
 
 // Проверка
 console.log("Результат вычисления");
 console.log("result 1:");
-console.log ( length  );
+console.log(length);
 console.log("result 2:");
-console.log ( length2  );
+console.log(length2);
 //
 // 1) Создаю функцию
-function fizzBuzz(num){
+function fizzBuzz(num) {
     const is3 = (num % 3 === 0);
     const is5 = (num % 5 === 0);
 
-    if(is3 && is5){
+    if (is3 && is5) {
         console.log('FizzBuzz');
-    }
-    else if(is3){
+    } else if (is3) {
         console.log('Fizz');
-    }
-    else if(is5){
+    } else if (is5) {
         console.log('Buzz');
     }
 }
 
-function fizzBuzzArray(array){
-    for(el of array){
+function fizzBuzzArray(array) {
+    for (el of array) {
         fizzBuzz(el);
     }
 }
@@ -640,9 +655,9 @@ fizzBuzzArray(ar);
 //console.log(result);
 //
 // 1) Создаю функцию
-function foo(str){
+function foo(str) {
     let result = '';
-    for(let i = str.length -1; i >= 0; i--){
+    for (let i = str.length - 1; i >= 0; i--) {
         let char = str[i];
         result += char;
     }
@@ -658,19 +673,20 @@ function foo(str){
 const stringForTest = 'F';
 
 // 3) вызываю функцию с тестовыми данными и записать результат в переменную:
-const result = foo( stringForTest );
+const result = foo(stringForTest);
 
 // 4) печатаю результат:
 console.warn("РЕЗУЛЬТАТ: ");
 console.log(result);
+
 //
-function foo(str){
+function foo(str) {
     let arr = str.split(' ');
     let maxLength = 0;
 
-    for(l of arr){
+    for (l of arr) {
         let i = l.length;
-        if(maxLength < i){
+        if (maxLength < i) {
             maxLength = i;
         }
     }
@@ -692,12 +708,12 @@ console.log(test);
 //Найти самое длинного слово в строке
 
 // 1) Создаю функцию
-function foo(str){
+function foo(str) {
     const string = str.split(' ');
     let lengthWord = '';
 
-    for(word of string){
-        if(word.length > lengthWord.length){
+    for (word of string) {
+        if (word.length > lengthWord.length) {
             lengthWord = word
         }
     }
@@ -717,12 +733,12 @@ console.log('РЕЗУЛЬТАТ: ');
 console.log(test);
 
 //
-function foo(str){
+function foo(str) {
     let counter = 0;
 
-    for(let i = 0; i < str.length; i++){
+    for (let i = 0; i < str.length; i++) {
         const char = str[i];
-        if(char.toLowerCase() === 'а'){
+        if (char.toLowerCase() === 'а') {
             counter = counter + 1;
         }
     }
@@ -733,6 +749,35 @@ const testString = 'САмАя длиннАя СТРОКА';
 const resultTest = foo(testString);
 
 console.log(`Буква а встречается ${resultTest} раза`);
+
+//Сумма диапазона.
+// Напишите функцию range, принимающую два аргумента, начало и конец диапазона, и возвращающую массив, который содержит все числа из него, включая начальное и конечное.
+//
+// Затем напишите функцию sum, принимающую массив чисел и возвращающую их сумму.
+// Запустите указанную выше инструкцию и убедитесь, что она возвращает 55.В качестве бонуса дополните функцию range, чтобы она могла принимать необязательный третий аргумент – шаг для построения массива. Если он не задан, шаг равен единице. Вызов функции range(1, 10, 2) должен будет вернуть [1, 3, 5, 7, 9]. Убедитесь, что она работает с отрицательным шагом так, что вызов range(5, 2, -1) возвращает [5, 4, 3, 2].
+function range(start, end) {
+    let numbers = [];
+    for (let i = start; i <= end; i++) {
+        numbers.push(i);
+    }
+    return numbers;
+}
+
+function sum(arr) {
+    let summa = 0;
+    for (numb of arr) {
+        summa = summa + numb;
+    }
+    return summa;
+}
+
+// TEST:
+const resultTest = range(2, 6);  //[2,3,4,5,6]
+console.log(resultTest);
+
+const result2 = sum(resultTest);
+console.log(result2);
+
 
 
 
