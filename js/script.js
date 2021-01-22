@@ -795,6 +795,21 @@ const test = [1, 2, 3, 4];
 const resultTest = reverseArray(test);
 console.log(resultTest);
 
+//skolco bukv vo mne
+function letterInLine(searchString, charToFind){
+    let total = 0;
+    for(let i = 0; i < searchString.length; i++){
+        const char = searchString[i];
+        if(char.toLowerCase() === charToFind.toLowerCase()){
+            total += 1;
+        }
+    }
+    return total;
+}
+const stringTest = 'la la tapala';
+const resultTest = letterInLine(stringTest, 'a');
+console.log(resultTest);
+
 
 
 
