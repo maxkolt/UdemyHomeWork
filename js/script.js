@@ -810,6 +810,22 @@ const stringTest = 'la la tapala';
 const resultTest = letterInLine(stringTest, 'a');
 console.log(resultTest);
 
+//samoe dlinoe slovo
+function longestWord(str, strToFind){
+    const wordArr = str.split(' ');
+    let word = '';
+    for(w of wordArr){
+        if(w.toLowerCase().includes(strToFind.toLowerCase())){
+            word = w;
+        }
+    }
+
+    return word;
+}
+const testString = 'hello olo';
+const resultTest = longestWord(testString, 'H')
+console.log(`будет вот твкой результат ${resultTest}`);
+
 
 
 
