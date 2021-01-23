@@ -826,6 +826,24 @@ const testString = 'hello olo';
 const resultTest = longestWord(testString, 'H')
 console.log(`будет вот твкой результат ${resultTest}`);
 
+//
+function longestWord(str){
+    const wordArr = str.split(' ');
+    let longestWord = '';
+    for(word of wordArr){
+        if(word.length > longestWord.length){
+            longestWord = word;
+        }
+    }
+    return longestWord;
+
+}
+//test
+const testString = 'aaaaaaa dddd qq';
+const resultTest = longestWord(testString);
+console.log(`samaia dlinnoia stroka ${resultTest}`)
+
+
 
 
 
