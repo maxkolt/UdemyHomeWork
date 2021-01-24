@@ -647,12 +647,12 @@ function fizzBuzzArray(array) {
 const ar = [15, 3, 5, 9];
 
 // 3) вызываю функцию с тестовыми данными и записать результат в переменную:
-// const result = fizzBuzz(ar);
+ const result = fizzBuzz(ar);
 fizzBuzzArray(ar);
 
 // 4) печатаю результат:
 //console.warn("РЕЗУЛЬТАТ: ");
-//console.log(result);
+console.log(result);
 //
 // 1) Создаю функцию
 function foo(str) {
@@ -842,6 +842,33 @@ function longestWord(str){
 const testString = 'aaaaaaa dddd qq';
 const resultTest = longestWord(testString);
 console.log(`samaia dlinnoia stroka ${resultTest}`)
+
+//FizzBuzz
+
+function fizzBuzz(num){
+    const is3 = num % 3 === 0;
+    const is5 = num % 5 === 0;
+
+    if(is3 && is5){
+        console.log('fizzBuzz')
+    }
+    else if(is3){
+        console.log('fizze')
+    }
+    else if(is5){
+        console.log('buzz')
+    }
+}
+function fizzBuzzArr(array){
+    for(el of array){
+        fizzBuzz(el)
+    }
+}
+//test
+const ar = [3, 5, 15];
+const result = fizzBuzz(ar);
+fizzBuzzArr(ar);
+console.log(result);
 
 
 
