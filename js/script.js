@@ -853,7 +853,7 @@ function fizzBuzz(num){
         console.log('fizzBuzz')
     }
     else if(is3){
-        console.log('fizze')
+        console.log('fizz')
     }
     else if(is5){
         console.log('buzz')
@@ -868,7 +868,7 @@ function fizzBuzzArr(array){
 const ar = [3, 5, 15];
 const result = fizzBuzz(ar);
 fizzBuzzArr(ar);
-console.log(result);
+
 
 
 
