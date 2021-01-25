@@ -647,7 +647,7 @@ function fizzBuzzArray(array) {
 const ar = [15, 3, 5, 9];
 
 // 3) вызываю функцию с тестовыми данными и записать результат в переменную:
- const result = fizzBuzz(ar);
+const result = fizzBuzz(ar);
 fizzBuzzArray(ar);
 
 // 4) печатаю результат:
@@ -777,10 +777,11 @@ console.log(resultTest);
 
 const result2 = sum(resultTest);
 console.log(result2);
+
 //
-function reverseArray(array){
+function reverseArray(array) {
     let result = [];
-    for(let i = array.length -1; i > 0; i--){
+    for (let i = array.length - 1; i > 0; i--) {
         console.log("Текущее значение i: " + i);
         console.log("Массив до изменения: " + result);
 
@@ -796,48 +797,51 @@ const resultTest = reverseArray(test);
 console.log(resultTest);
 
 //skolco bukv vo mne
-function letterInLine(searchString, charToFind){
+function letterInLine(searchString, charToFind) {
     let total = 0;
-    for(let i = 0; i < searchString.length; i++){
+    for (let i = 0; i < searchString.length; i++) {
         const char = searchString[i];
-        if(char.toLowerCase() === charToFind.toLowerCase()){
+        if (char.toLowerCase() === charToFind.toLowerCase()) {
             total += 1;
         }
     }
     return total;
 }
+
 const stringTest = 'la la tapala';
 const resultTest = letterInLine(stringTest, 'a');
 console.log(resultTest);
 
 //samoe dlinoe slovo
-function longestWord(str, strToFind){
+function longestWord(str, strToFind) {
     const wordArr = str.split(' ');
     let word = '';
-    for(w of wordArr){
-        if(w.toLowerCase().includes(strToFind.toLowerCase())){
+    for (w of wordArr) {
+        if (w.toLowerCase().includes(strToFind.toLowerCase())) {
             word = w;
         }
     }
 
     return word;
 }
+
 const testString = 'hello olo';
 const resultTest = longestWord(testString, 'H')
 console.log(`будет вот твкой результат ${resultTest}`);
 
 //
-function longestWord(str){
+function longestWord(str) {
     const wordArr = str.split(' ');
     let longestWord = '';
-    for(word of wordArr){
-        if(word.length > longestWord.length){
+    for (word of wordArr) {
+        if (word.length > longestWord.length) {
             longestWord = word;
         }
     }
     return longestWord;
 
 }
+
 //test
 const testString = 'aaaaaaa dddd qq';
 const resultTest = longestWord(testString);
@@ -845,29 +849,39 @@ console.log(`samaia dlinnoia stroka ${resultTest}`)
 
 //FizzBuzz
 
-function fizzBuzz(num){
+function fizzBuzz(num) {
     const is3 = num % 3 === 0;
     const is5 = num % 5 === 0;
 
-    if(is3 && is5){
+    if (is3 && is5) {
         console.log('fizzBuzz')
-    }
-    else if(is3){
+    } else if (is3) {
         console.log('fizz')
-    }
-    else if(is5){
+    } else if (is5) {
         console.log('buzz')
     }
 }
-function fizzBuzzArr(array){
-    for(el of array){
+
+function fizzBuzzArr(array) {
+    for (el of array) {
         fizzBuzz(el)
     }
 }
+
 //test
 const ar = [3, 5, 15];
 const result = fizzBuzz(ar);
 fizzBuzzArr(ar);
+
+//вернуть массив с положительными числами
+
+const testArr = [-1, 0, 1, -2, 3, 6, -44, 13];
+
+let positiveArr = testArr.filter(function (number) {
+    return number > 0;
+});
+//test
+console.log(positiveArr);
 
 
 
