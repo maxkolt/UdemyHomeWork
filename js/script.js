@@ -580,8 +580,8 @@ foo();
 //
 function reverseStr(str) {
     var newStr = '';
-    for (i = str.length - 1; i >= 0; i--) {
-        newStr += str.charAt(i);
+    for (el = str.length - 1; el >= 0; el--) {
+        newStr += str.charAt(el);
     }
     return newStr;
 }
@@ -596,7 +596,7 @@ function foo(str) {
 
     for (let i = 0; i < str.length; i++) {
         const char = str[i];
-        if (char.toLowerCase() == 'т') {
+        if (char.toLowerCase()) {
             counter++;
         }
     }
@@ -882,6 +882,79 @@ let positiveArr = testArr.filter(function (number) {
 });
 //test
 console.log(positiveArr);
+
+
+//Создать функцию, которая принимает два элемента. Функция проверяет, является ли первый элемент родителем для второго:
+//isParent(parent, child);
+//isParent(document.body.children[0], document.querySelector('mark'));
+// true так как первый див является родительским элементом для mark
+//isParent(document.querySelector('ul'), document.querySelector('mark'));
+// false так ul НЕ является родительским элементом для mark
+//Функция принимает только DOM объекты. Обязательно проверяйте это.
+
+function isParent(parent, child) {
+    if (!(parent instanceof HTMLElement) || !(child instanceof HTMLElement)) return;
+
+    let isParent = false;
+    let currentParent = child.parentElement;
+
+    while (currentParent) {
+        isParent = currentParent === parent
+        if (isParent) {
+            break;
+        }
+
+        currentParent = currentParent.parentElement;
+    }
+
+    return isParent;
+}
+
+isParent(document.body.children[0], document.querySelector('mark'));
+//Используя разметку из предыдущего задания.Получить список всех ссылок, которые не находятся
+// внутри списка ul.
+function isParent(parent, child) {
+    if (!(parent instanceof HTMLElement) || !(child instanceof HTMLElement)) return;
+
+    let isParent = false;
+    let currentParent = child.parentElement;
+
+    while (currentParent) {
+        isParent = currentParent === parent
+        if (isParent) {
+            break;
+        }
+
+        currentParent = currentParent.parentElement;
+    }
+
+    return isParent;
+}
+isParent(document.body.children[0], document.querySelector('mark'));
+//Используя разметку из предыдущего задания.Найти элемент, который находится перед и после
+//списка ul.
+function isParent(parent, child) {
+    if (!(parent instanceof HTMLElement) || !(child instanceof HTMLElement)) return;
+
+    let isParent = false;
+    let currentParent = child.parentElement;
+
+    while(currentParent) {
+        isParent = currentParent === parent
+        if (isParent) {
+            break;
+        }
+
+        currentParent = currentParent.parentElement;
+    }
+
+    return isParent;
+}
+
+isParent(document.body.children[0], document.querySelector('mark'));
+
+
+
 
 
 
