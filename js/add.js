@@ -50,6 +50,7 @@ console.log(samsung.getPriceWithDiscount());
 //ES6 классы
 
 const methodName = 'setNewPrice'
+
 class ProductES {
     constructor(brand, price, discount) {
         this.brand = brand;
@@ -73,8 +74,28 @@ class ProductES {
         this.price = newPrice
     }
 }
+
 const newProduct = new ProductES('Samsung', 200, 10)
 console.log(newProduct)
 
 //Наследование ES6
+class UserES {
+    constructor(firstName, lastName) {
+        this.firstname = firstName;
+        this.lastName = lastName;
+    }
 
+    getFullName() {
+        return `${this.firstname} ${this.lastName}`;
+    }
+}
+
+class CustomerES extends UserES {
+    constructor(firstName, lastName, membership) {
+        super(firstName, lastName);
+        this.membership = membership;
+    }
+}
+
+const customerEs = new CustomerES('Max', 'Kolt', 'basic');
+console.log(customerEs);
