@@ -45,4 +45,36 @@ const apple = new Product('Apple', 300, 15);
 const samsung = new Product('Samsumg', 250, 10);
 
 console.log(apple.getPriceWithDiscount());
-console.log(samsung.getPriceWithDiscount())
+console.log(samsung.getPriceWithDiscount());
+
+//ES6 классы
+
+const methodName = 'setNewPrice'
+class ProductES {
+    constructor(brand, price, discount) {
+        this.brand = brand;
+        this.price = price;
+        this.discount = discount
+    }
+
+    get brand() {
+        return this._brand;
+    }
+
+    set brand(name) {
+        this._brand = name
+    }
+
+    getPriceWithDiscount() {
+        return (this.price * (100 - this.discount)) / 100;
+    }
+
+    [methodName](newPrice) {
+        this.price = newPrice
+    }
+}
+const newProduct = new ProductES('Samsung', 200, 10)
+console.log(newProduct)
+
+//Наследование ES6
+
