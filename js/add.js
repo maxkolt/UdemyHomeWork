@@ -29,3 +29,20 @@ async function getPost2(id) {
 getPost2(1)
     .then(data => console.log(data))
     .catch(err => console.log(err))
+
+//ES5
+function Product(brand, price, discount) {
+    this.brand = brand;
+    this.price = price;
+    this.discount = discount;
+}
+
+Product.prototype.getPriceWithDiscount = function () {
+    return (this.price * (100 - this.discount)) / 100;
+}
+
+const apple = new Product('Apple', 300, 15);
+const samsung = new Product('Samsumg', 250, 10);
+
+console.log(apple.getPriceWithDiscount());
+console.log(samsung.getPriceWithDiscount())
